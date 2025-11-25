@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://drg7pk8ebd04j"]
+
+[ext_resource type="Script" path="res://tile.gd" id="1_lon2s"]
+[ext_resource type="Script" path="res://tile_label.gd" id="2_ertmw"]
+
+[sub_resource type="FontFile" id="FontFile_u3g8r"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ns74"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jqnw4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1a71"]
+
+[node name="Tile" type="AspectRatioContainer"]
+custom_minimum_size = Vector2(50, 50)
+mouse_filter = 0
+script = ExtResource("1_lon2s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_filter = 2
+color = Color(1, 0.878431, 0.792157, 0.662745)
+
+[node name="Label" type="LineEdit" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/selection_color = Color(0, 0, 0, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 0)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_u3g8r")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8ns74")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_jqnw4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b1a71")
+text = "A"
+alignment = 1
+max_length = 1
+middle_mouse_paste_enabled = false
+flat = true
+select_all_on_focus = true
+script = ExtResource("2_ertmw")

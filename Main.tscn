@@ -1,0 +1,158 @@
+[gd_scene load_steps=5 format=3 uid="uid://culymc6rmf5wd"]
+
+[ext_resource type="PackedScene" uid="uid://drg7pk8ebd04j" path="res://Tile.tscn" id="1_2m7p1"]
+[ext_resource type="Script" path="res://solver.gd" id="1_trlg1"]
+[ext_resource type="Script" path="res://grid.gd" id="2_1tpjp"]
+[ext_resource type="Script" path="res://word_label.gd" id="4_qi3sp"]
+
+[node name="Solver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_trlg1")
+
+[node name="Grid" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+columns = 5
+script = ExtResource("2_1tpjp")
+
+[node name="Tile" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile2" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile3" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile4" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile5" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile6" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile7" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile8" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile9" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile10" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile11" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile12" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile13" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile14" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile15" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile16" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile17" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile18" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile19" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile20" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile21" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile22" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile23" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile24" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Tile25" parent="Grid" instance=ExtResource("1_2m7p1")]
+layout_mode = 2
+
+[node name="Controls" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -121.0
+offset_right = 113.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SubmitButton" type="Button" parent="Controls"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Submit"
+
+[node name="ClearButton" type="Button" parent="Controls"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Clear"
+
+[node name="Word" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_top = 110.0
+offset_right = 138.0
+offset_bottom = 168.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Word"]
+layout_mode = 2
+text = "Target Word:"
+
+[node name="WordEdit" type="LineEdit" parent="Word"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+max_length = 25
+clear_button_enabled = true
+script = ExtResource("4_qi3sp")
