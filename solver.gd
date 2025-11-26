@@ -60,31 +60,40 @@ func solve() -> void:
 			item.coords = Vector2i(x, y)
 			item.index = i
 			item.letter = $Grid.values[i].to_upper()
-			item.can_join = %WordEdit.text.to_array() if item.letter == "" else letter_tree[item.letter]["next"]
+			item.can_join = to_arr(%WordEdit.text) if item.letter == "" else letter_tree[item.letter]["next"]
 			item.can_join.append("")
 			if item.letter == start:
 				start_positions.append(item.index)
 			if x > 0:
 				var neighbor = _nodes[i - 1]
 				item.neighbors.append(neighbor)
-				neighbor.neighbors.append(self)
+				neighbor.neighbors.append(item)
 			if y > 0:
 				var neighbor = _nodes[i - shape.x]
 				item.neighbors.append(neighbor)
-				neighbor.neighbors.append(self)
+				neighbor.neighbors.append(item)
 			if x > 0 and y > 0:
 				var neighbor = _nodes[i - shape.x - 1]
 				item.neighbors.append(neighbor)
-				neighbor.neighbors.append(self)
-				if x < shape.x - 1:
-					neighbor = _nodes[i - shape.x + 1]
-					item.neighbors.append(neighbor)
-					neighbor.neighbors.append(self)
+				neighbor.neighbors.append(item)
+			if y > 0 and x < shape.x - 1:
+				var neighbor = _nodes[i - shape.x + 1]
+				item.neighbors.append(neighbor)
+				neighbor.neighbors.append(item)
 			_nodes.append(item)
 			i += 1
 	_solve_steps = [_nodes]
-	
 
-	
 	var logic = Logic.new()
-	logic.solve(_nodes, start_positions)
+	var solution_path = logic.solve(_nodes, start_positions, %WordEdit.text.to_upper())
+
+	if solution_path.size() > 0:
+		print("Solution found! Path: ", solution_path)
+	else:
+		print("No solution found")
+
+func to_arr(text: String) -> Array:
+	var char_array = []
+	for char in text:
+		char_array.append(char)
+	return char_array
